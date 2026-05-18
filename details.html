@@ -72,6 +72,11 @@
         .orb2 { width: 500px; height: 500px; background: #b8860b; bottom: -200px; right: -150px; animation-duration: 25s; }
         .orb3 { width: 300px; height: 300px; background: #ffd966; top: 40%; left: 60%; animation-duration: 14s; opacity: 0.2; }
 
+        @media (max-width: 768px) {
+            .orb2, .orb3 { display: none; }
+            .orb1 { width: 250px; height: 250px; opacity: 0.15; }
+        }
+
         .gold-rainbow-border {
             position: relative;
             background: rgba(5, 7, 12, 0.55);
@@ -96,6 +101,19 @@
             z-index: 20;
         }
 
+        @media (max-width: 1200px) {
+            .container { max-width: 1100px; padding: 1.8rem 2rem; }
+        }
+        @media (max-width: 992px) {
+            .container { max-width: 900px; padding: 1.5rem 1.8rem; }
+        }
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+        }
+        @media (max-width: 576px) {
+            .container { padding: 0.8rem; }
+        }
+
         .luxury-title {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 700;
@@ -107,6 +125,7 @@
             text-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
+        /* ========== FIXED LOGO STYLES ========== */
         .logo-luxury {
             display: flex;
             align-items: center;
@@ -114,21 +133,81 @@
         }
 
         .logo-icon {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             background: linear-gradient(145deg, #1f1b10, #0d0a03);
-            border-radius: 35px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             border: 1px solid rgba(212, 175, 55, 0.6);
             box-shadow: 0 0 20px rgba(212,175,55,0.2);
+            overflow: hidden;
+            flex-shrink: 0;
         }
 
+        .logo-icon i {
+            font-size: 2.2rem;
+            color: #D4AF37;
+        }
+
+        /* Logo image styling */
         .logo-icon img {
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             object-fit: contain;
+            display: block;
+        }
+
+        /* Company name styling */
+        .company-name-text {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            opacity: 0.9;
+        }
+
+        /* Responsive logo */
+        @media (max-width: 768px) {
+            .logo-icon {
+                width: 55px;
+                height: 55px;
+                border-radius: 16px;
+            }
+            .logo-icon i {
+                font-size: 1.8rem;
+            }
+            .logo-icon img {
+                width: 42px;
+                height: 42px;
+            }
+            .luxury-title {
+                font-size: 1.6rem !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo-luxury {
+                gap: 0.8rem;
+            }
+            .logo-icon {
+                width: 45px;
+                height: 45px;
+                border-radius: 14px;
+            }
+            .logo-icon i {
+                font-size: 1.4rem;
+            }
+            .logo-icon img {
+                width: 35px;
+                height: 35px;
+            }
+            .luxury-title {
+                font-size: 1.3rem !important;
+            }
+            .company-name-text {
+                font-size: 0.65rem;
+                letter-spacing: 1px;
+            }
         }
 
         .stat-luxury {
@@ -140,11 +219,22 @@
             border-bottom: 2px solid #d4af37;
         }
 
+        @media (max-width: 768px) {
+            .stat-luxury { padding: 0.8rem 1rem; }
+        }
+
         .stat-number-gold {
             font-size: 2.8rem;
             font-weight: 800;
             color: #e4bc5c;
             text-shadow: 0 0 8px rgba(212,175,55,0.4);
+        }
+
+        @media (max-width: 992px) { .stat-number-gold { font-size: 2.2rem; } }
+        @media (max-width: 768px) { .stat-number-gold { font-size: 1.8rem; } }
+        @media (max-width: 576px) { 
+            .stat-number-gold { font-size: 1.4rem; }
+            .stat-luxury div:last-child { font-size: 0.7rem; }
         }
 
         .pricing-luxe {
@@ -155,6 +245,8 @@
             transition: all 0.4s;
             border: 1px solid rgba(212, 175, 55, 0.3);
         }
+
+        @media (max-width: 768px) { .pricing-luxe { padding: 1.5rem 1rem; } }
 
         .pricing-luxe:hover {
             transform: translateY(-12px);
@@ -168,6 +260,10 @@
             color: #f5d742;
             font-family: 'Cormorant Garamond', serif;
         }
+
+        @media (max-width: 992px) { .price-gold { font-size: 2rem; } }
+        @media (max-width: 768px) { .price-gold { font-size: 1.8rem; } }
+        @media (max-width: 576px) { .price-gold { font-size: 1.5rem; } }
 
         .btn-gold {
             background: linear-gradient(95deg, #aa8329, #d4af37, #f3d572);
@@ -184,6 +280,10 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
+        }
+
+        @media (max-width: 576px) {
+            .btn-gold { padding: 0.6rem 1rem; font-size: 0.8rem; }
         }
 
         .btn-gold:hover {
@@ -203,6 +303,10 @@
             cursor: pointer;
         }
 
+        @media (max-width: 576px) {
+            .btn-outline-golden { padding: 0.5rem 1rem; font-size: 0.7rem; }
+        }
+
         .btn-outline-golden:hover {
             background: #d4af37;
             color: #0a0802;
@@ -217,6 +321,10 @@
             transition: 0.2s;
             display: inline-block;
             margin: 0.3rem;
+        }
+
+        @media (max-width: 576px) {
+            .branch-tag { padding: 0.3rem 0.8rem; font-size: 0.7rem; margin: 0.2rem; }
         }
 
         .branch-tag:hover {
@@ -235,17 +343,79 @@
             font-size: 1rem;
         }
 
+        @media (max-width: 576px) {
+            .form-luxury input, .form-luxury select { padding: 0.7rem 1rem; font-size: 0.85rem; }
+        }
+
         .form-luxury input:focus, .form-luxury select:focus {
             border-color: #d4af37;
             box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
             outline: none;
         }
 
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (max-width: 768px) { .stats-grid { gap: 1rem; } }
+        @media (max-width: 576px) { .stats-grid { gap: 0.8rem; } }
+
+        .pricing-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        @media (max-width: 992px) { .pricing-grid { gap: 1.5rem; } }
+        @media (max-width: 768px) { .pricing-grid { gap: 1rem; } }
+
+        .branches-contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) { .branches-contact { flex-direction: column; gap: 1rem; } }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        @media (max-width: 576px) { .header-flex { flex-direction: column; text-align: center; } }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+            margin-top: 1.2rem;
+        }
+
         @media (max-width: 768px) {
-            .container { padding: 1rem; }
-            .stat-number-gold { font-size: 1.8rem; }
-            .price-gold { font-size: 1.6rem; }
-            .luxury-title { font-size: 1.5rem; }
+            .header-info { flex-direction: column; align-items: center; gap: 0.5rem; text-align: center; }
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 1rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 576px) {
+            .pricing-features li { font-size: 0.8rem; margin: 0.3rem 0; }
         }
 
         .footer-lux {
@@ -255,6 +425,10 @@
             margin-top: 2rem;
             font-size: 0.75rem;
             letter-spacing: 1px;
+        }
+
+        @media (max-width: 576px) {
+            .footer-lux { font-size: 0.6rem; padding-top: 1rem; margin-top: 1rem; }
         }
 
         .spinner {
@@ -283,31 +457,31 @@
 </div>
 
 <div class="container">
-    <!-- HEADER -->
+    <!-- HEADER - FIXED LOGO -->
     <div class="gold-rainbow-border" style="padding: 1.8rem 2rem; margin-bottom: 2rem;">
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+        <div class="header-flex">
             <div class="logo-luxury">
                 <div class="logo-icon">
-                    <img src="logo.png" alt="VEXORA" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-gem\' style=\'font-size:2.5rem; color:#d4af37;\'></i>';">
+                    <!-- Logo with proper fallback - if logo.png exists it will show, otherwise crown icon -->
+                    <img src="logo.png" alt="VEXORA Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-crown\'></i>';">
                 </div>
                 <div>
                     <div class="luxury-title" style="font-size: 2rem;">VEXORA</div>
-                    <div style="font-size: 0.75rem; letter-spacing: 2px;">TECHNOLOGY SOLUTION</div>
+                    <div class="company-name-text">TECHNOLOGY SOLUTION</div>
                 </div>
             </div>
             <div>
-                <!-- Back to Home Button - Replaced About Us -->
                 <button class="btn-outline-golden" id="backToHomeBtn"><i class="fas fa-home"></i> Back to Home</button>
             </div>
         </div>
-        <div style="margin-top: 1.2rem; display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between;">
+        <div class="header-info">
             <div><i class="fas fa-gem" style="color:#d4af37;"></i> Est. 2023 | Navi Mumbai, Vashi</div>
             <div><i class="fas fa-globe-asia"></i> Presence: Mumbai · Hyderabad · Bangalore · Kerala · Delhi</div>
         </div>
     </div>
 
     <!-- STATS -->
-    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2.5rem;">
+    <div class="stats-grid">
         <div class="stat-luxury" style="flex:1;">
             <div class="stat-number-gold">200+</div>
             <div><i class="fas fa-laptop-code"></i> Software Projects</div>
@@ -330,30 +504,30 @@
         <h2 class="luxury-title" style="font-size: 2.2rem; text-align: center; margin-bottom: 0.5rem;">Bespoke Technology Offerings</h2>
         <p style="text-align: center; margin-bottom: 2rem; opacity: 0.8;">Complete Project Handover • Within 1 Week • Royal Concierge Support</p>
         
-        <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+        <div class="pricing-grid">
             <!-- Package 1: ₹50,000 - WEBSITE -->
             <div class="pricing-luxe" style="flex: 1; min-width: 260px;">
                 <i class="fas fa-laptop-code" style="font-size: 2.5rem; color:#d4af37;"></i>
                 <div class="price-gold" style="margin: 1rem 0;">₹50,000</div>
                 <h3 style="font-weight: 600; margin-bottom: 1rem;">Website</h3>
-                <ul style="list-style: none; margin: 1rem 0; text-align: left;">
-                    <li style="margin: 0.5rem 0;"><i class="fas fa-check-circle" style="color:#d4af37;"></i> Custom Built Website</li>
-                    <li style="margin: 0.5rem 0;"><i class="fas fa-check-circle" style="color:#d4af37;"></i> Full Source Code Handover</li>
-                    <li style="margin: 0.5rem 0;"><i class="fas fa-check-circle" style="color:#d4af37;"></i> 1-Week Express Delivery</li>
-                    <li style="margin: 0.5rem 0;"><i class="fas fa-check-circle" style="color:#d4af37;"></i> 3 Months Free Support</li>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check-circle" style="color:#d4af37;"></i> Custom Built Website</li>
+                    <li><i class="fas fa-check-circle" style="color:#d4af37;"></i> Full Source Code Handover</li>
+                    <li><i class="fas fa-check-circle" style="color:#d4af37;"></i> 1-Week Express Delivery</li>
+                    <li><i class="fas fa-check-circle" style="color:#d4af37;"></i> 3 Months Free Support</li>
                 </ul>
                 <button class="btn-gold call-btn"><i class="fas fa-phone"></i> Call Now</button>
             </div>
             
-            <!-- Package 2: ₹1,00,000 - CRYPTO ELITE SUITE (Polygon Network) -->
+            <!-- Package 2: ₹1,00,000 - CRYPTO ELITE SUITE -->
             <div class="pricing-luxe" style="flex: 1; min-width: 260px; border-top: 3px solid #d4af37;">
                 <i class="fas fa-coins" style="font-size: 2.5rem; color:#f5d742;"></i>
                 <div class="price-gold" style="margin: 1rem 0;">₹1,00,000</div>
                 <h3 style="margin-bottom: 1rem;">Crypto Elite Suite</h3>
-                <ul style="list-style: none; margin: 1rem 0; text-align: left;">
-                    <li style="margin: 0.5rem 0;"><i class="fas fa-check-circle" style="color:#d4af37;"></i> Custom Crypto Token (Polygon Network)</li>
-                    <li style="margin: 0.5rem 0;"><i class="fas fa-check-circle" style="color:#d4af37;"></i> Smart Contract Verify on PolygonScan</li>
-                    <li style="margin: 0.5rem 0;"><i class="fas fa-check-circle" style="color:#d4af37;"></i> 1-Week Complete Handover</li>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check-circle" style="color:#d4af37;"></i> Custom Crypto Token (Polygon Network)</li>
+                    <li><i class="fas fa-check-circle" style="color:#d4af37;"></i> Smart Contract Verify on PolygonScan</li>
+                    <li><i class="fas fa-check-circle" style="color:#d4af37;"></i> 1-Week Complete Handover</li>
                 </ul>
                 <button class="btn-gold call-btn"><i class="fas fa-phone"></i> Call Now</button>
             </div>
@@ -363,11 +537,11 @@
                 <i class="fas fa-chart-line" style="font-size: 2.5rem; color:#FFD966;"></i>
                 <div class="price-gold" style="margin: 1rem 0;">₹5,00,000</div>
                 <h3 style="margin-bottom: 1rem;">Maharaja Package</h3>
-                <ul style="list-style: none; margin: 1rem 0; text-align: left;">
-                    <li style="margin: 0.5rem 0;"><i class="fas fa-gem" style="color:#d4af37;"></i> Crypto Token + MLM Income Model</li>
-                    <li style="margin: 0.5rem 0;"><i class="fas fa-gem" style="color:#d4af37;"></i> Advanced Software Suite</li>
-                    <li style="margin: 0.5rem 0;"><i class="fas fa-gem" style="color:#d4af37;"></i> Binary/Matrix Income Engine</li>
-                    <li style="margin: 0.5rem 0;"><i class="fas fa-gem" style="color:#d4af37;"></i> 1-Week Express Handover</li>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-gem" style="color:#d4af37;"></i> Crypto Token + MLM Income Model</li>
+                    <li><i class="fas fa-gem" style="color:#d4af37;"></i> Advanced Software Suite</li>
+                    <li><i class="fas fa-gem" style="color:#d4af37;"></i> Binary/Matrix Income Engine</li>
+                    <li><i class="fas fa-gem" style="color:#d4af37;"></i> 1-Week Express Handover</li>
                 </ul>
                 <button class="btn-gold call-btn"><i class="fas fa-phone"></i> Call Now</button>
             </div>
@@ -379,7 +553,7 @@
     </div>
 
     <!-- BRANCHES & CONTACT -->
-    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;">
+    <div class="branches-contact">
         <div class="gold-rainbow-border" style="flex: 1.5; padding: 1.5rem;">
             <h3><i class="fas fa-landmark"></i> Regal Offices Across India</h3>
             <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem;">
@@ -436,7 +610,7 @@
 </div>
 
 <script>
-    // ✅ YOUR GOOGLE SHEETS WEB APP URL
+    // GOOGLE SHEETS WEB APP URL
     const GOOGLE_SHEETS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzd42mU057-AV_p4MTCoV0q4Gn2VJK3BjK23k2pxtNH4Vhx9s8mV9ULwknp6eve8tGZ/exec";
     
     // DOM Elements
@@ -447,14 +621,14 @@
     const msgDiv = document.getElementById('formRoyalMsg');
     const submitBtn = document.getElementById('submitFormBtn');
     
-    // BACK TO HOME BUTTON - Redirects to index.html
+    // BACK TO HOME BUTTON
     if (backToHomeBtn) {
         backToHomeBtn.addEventListener('click', () => {
             window.location.href = 'index.html';
         });
     }
     
-    // ALL CALL BUTTONS - Direct call to 9309332775
+    // ALL CALL BUTTONS
     const allCallButtons = document.querySelectorAll('.call-btn');
     allCallButtons.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -470,11 +644,9 @@
         }, 5000);
     }
     
-    // Redirects for call and email buttons
     if (callBtn) callBtn.addEventListener('click', () => window.location.href = 'tel:+919309332775');
     if (emailBtn) emailBtn.addEventListener('click', () => window.location.href = 'mailto:vexora.solution@gmail.com?subject=Inquiry%20from%20Vexora%20Website&body=Hello%20Vexora%20Team%2C%0D%0A%0D%0AI%20would%20like%20to%20know%20more%20about%20your%20services.');
     
-    // Send to Google Sheets
     async function sendToGoogleSheets(formData) {
         try {
             await fetch(GOOGLE_SHEETS_WEBAPP_URL, {
@@ -491,7 +663,6 @@
         }
     }
     
-    // Form submission
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
@@ -537,7 +708,7 @@
         submitBtn.disabled = false;
     });
     
-    console.log("%c✨ VEXORA LUXURY PAGE | Back to Home Button Active ✨", "color: #d4af37; font-size: 14px; font-weight: bold;");
+    console.log("%c✨ VEXORA | Fully Responsive Luxury Page | Logo Fixed ✨", "color: #d4af37; font-size: 14px; font-weight: bold;");
 </script>
 </body>
 </html>
